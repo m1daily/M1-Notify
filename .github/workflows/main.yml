@@ -1,0 +1,14 @@
+name: Image
+
+on:
+  repository_dispatch:
+    types: [on-demand-test]
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Receive
+        run: |
+          env=${{ github.event.client_payload.env }}
+          echo "ENV = $env"
