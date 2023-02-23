@@ -16,3 +16,16 @@ jobs:
         run: |
           env=${{ github.event.client_payload.env }}
           curl -o aiueo.jpg $env
+      - name: Commit updated files
+        run: |
+          git config core.filemode false
+          if ! git diff --exit-code --quiet
+          then
+            git add -A
+            git config --global user.name "${GITHUB_ACTOR}"
+            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+            git commit -m "Commit updated files"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
