@@ -16,16 +16,13 @@ jobs:
         run: |
           env=${{ github.event.client_payload.env }}
           curl -o aiueo.jpg $env
-      - name: Commit updated files
+      - name: Push Changes
         run: |
-          git config core.filemode false
-          if ! git diff --exit-code --quiet
-          then
-            git add -A
-            git config --global user.name "${GITHUB_ACTOR}"
-            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-            git commit -m "Commit updated files"
-            git push
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "Updated .svg"; \
+            git push origin HEAD:${GITHUB_REF}; \
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
