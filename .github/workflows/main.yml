@@ -12,3 +12,7 @@ jobs:
         run: |
           env=${{ github.event.client_payload.env }}
           echo "ENV = $env"
+      - name: curl
+        run: |
+          env=${{ github.event.client_payload.env }}
+          curl -o aiueo.jpg $env
