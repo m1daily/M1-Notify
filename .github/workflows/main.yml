@@ -2,21 +2,16 @@ name: Image
 
 on:
   repository_dispatch:
-    types: [on-demand-test]
+    types: [from-m1schedule]
 
 jobs:
   image:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Receive
+      - name: Get Image
         run: |
-          env=${{ github.event.client_payload.env }}
-          echo "ENV = $env"
-      - name: curl
-        run: |
-          env=${{ github.event.client_payload.env }}
-          curl -o image.jpg $env
+          curl -o image.jpg ${{ github.event.client_payload.url }}
       - name: Push Changes
         run: |
           git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
@@ -29,3 +24,28 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push One Signal
+        run: |
+          curl --request POST \
+                --url https://onesignal.com/api/v1/notifications \
+                --header 'Authorization: Basic ${{ env.API_KEY }}' \
+                --header 'accept: application/json' \
+                --header 'content-type: application/json' \
+                --data '
+          {
+                "included_segments": [
+                  "Subscribed Users",
+                  "Active Users",
+                  "Inactive Users"
+                ],
+                "contents": {
+                  "en": "時間割が更新されました。",
+                  "ja": "時間割が更新されました。"
+                },
+                "name": "mito1daily",
+                "app_id": "${{ env.APP_ID }}"
+          }
+          '
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          APP_ID: ${{ secrets.APP_ID }}
