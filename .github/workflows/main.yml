@@ -26,3 +26,5 @@ jobs:
             git commit -m "Updated .svg"; \
             git push origin HEAD:${GITHUB_REF}; \
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
