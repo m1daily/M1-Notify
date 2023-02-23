@@ -1,8 +1,11 @@
-name: Image
+name: Update Image
 
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [from-m1schedule]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   image:
@@ -12,6 +15,7 @@ jobs:
       - name: Get Image
         run: |
           curl -o image.jpg ${{ github.event.client_payload.url }}
+
       - name: Push Changes
         run: |
           git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
@@ -24,6 +28,7 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Push One Signal
         run: |
           curl --request POST \
