@@ -1,5 +1,5 @@
 window.onload = function() {
-  fetch('https://script.google.com/macros/s/AKfycbxapSGVuHxmsMJtsdOiiWAT2xNnCr8YpCKa3pKTo_YMnHmdoYfZkBqhe2sEM-54JjonPA/exec')
+  fetch(process.env.GAS_URL)
   .then(function (response) {
     return json = response.json() // responseをjsonに変換
   }).then(function (json) {
