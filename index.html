@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M1時間割</title>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "38a3fe6e-17e1-410b-b178-73e2c3df6748",
-            });
-        });
-    </script>
     <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png">
     <meta name="msapplication-square150x150logo" content="/site-tile-150x150.png">
     <meta name="msapplication-wide310x150logo" content="/site-tile-310x150.png">
@@ -23,15 +14,23 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicons/icon-512x512.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/icon-32x32.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "38a3fe6e-17e1-410b-b178-73e2c3df6748",
+            });
+        });
+    </script>
 </head>
 
 <main>
-    <blockquote id="img" class="/" lang="en" data-id="/" data-context="false"></blockquote>
+    <blockquote id="img" class="/" lang="jp" data-id="/" data-context="true"></blockquote>
     <script id="img_js" async src="/" charset="utf-8"></script>
-    <div id="date" style="font-size: 1.1em;"></div>
-    <a href="https://github.com/m1daily/m1notify/wiki" target="_blank" rel="noopener noreferrer">通知設定方法(外部リンク)</a>
+    <div id="date" style="font-size: 1.1em; font-family: YuGothic,Yu Gothic Medium,ヒラギノ角ゴシック,Meiryo,sans-serif; padding-bottom: 3em;"></div>
+    <a href="https://github.com/m1daily/m1notify/wiki" target="_blank" rel="noopener noreferrer" style="font-size: 1.1em; font-family: YuGothic,Yu Gothic Medium,ヒラギノ角ゴシック,Meiryo,sans-serif;">通知設定方法(外部リンク)</a>
     <div class="onesignal-customlink-container"></div>
 </main>
-
 </html>
 <script src="main.js"></script>
