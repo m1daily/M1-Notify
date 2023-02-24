@@ -10,7 +10,7 @@ Discussions、issue、PullRequestを利用する場合は、次のガイドラ�
 
 「Issueで報告するほどの話題ではない」といったような場合の為にDiscussionsを用意しました。
 
-このリポジトリには*Discussions*がないため、[時間割BotのDiscussions](https://github.com/m1daily/Schedule_Bot/discussions)の方へお願いします。
+このリポジトリには*Discussionsがない*ため、[時間割BotのDiscussions](https://github.com/m1daily/Schedule_Bot/discussions)の方へお願いします。
 
 ### 各カテゴリの説明
 - 📣アナウンス
