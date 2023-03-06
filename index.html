@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicons/icon-512x512.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/icon-32x32.png">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
         window.OneSignal = window.OneSignal || [];
@@ -25,30 +26,31 @@
     </script>
 </head>
 
-<main style="font-size: 1em; font-family: YuGothic,Yu Gothic Medium,ヒラギノ角ゴシック,Meiryo,sans-serif;">
-    <img id="img" src="/" width="0%" style="max-width: 0em;">
-    <p id="date" style="padding-bottom: 3em;"></p>
+<main>
+    <img id="img" src="/">
+    <p id="date" style="padding-bottom: 4em;"></p>
     <details id="month" style="padding-bottom: 3em;">
         <summary>月間予定(見づらい)</summary>
-        <div id="month-list" style="list-style: none; font-size: 0.8em; background-color: #fafafa; display: inline-block;"></div>
+        <div id="month-list"></div>
     </details>
     <div class="onesignal-customlink-container"></div>
-    <div style="padding-bottom: 2em;">
-        <p style="margin: 0px;">・設定方法↓</p>
+
+    <div class="icon">
+        <p>・設定方法↓</p>
         <a href="https://github.com/m1daily/m1notify/wiki" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/wiki-444444?style=for-the-badge&logo=github&logoColor=white"></a>
     </div>
-    <div style="padding-bottom: 2em;">
-        <p style="margin: 0px;">・SNS</p>
+    <div class="icon">
+        <p>・SNS</p>
         <a href="https://twitter.com/mito1daily" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/twitter-1da1f2?style=for-the-badge&logo=twitter&logoColor=white"></a>
         <a href="https://line.me/ti/g/_8lUquMsgk" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LINE-44cc11?style=for-the-badge&logo=line&logoColor=white"></a>
         <a href="https://discord.gg/bC6XJnYa9f" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"></a>
     </div>
-    <div>
-        <p style="margin: 0px;">・その他 関連リンク</p>
+    <div class="icon">
+        <p>・その他 関連リンク</p>
         <a href="https://github.com/m1daily" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-444444?style=for-the-badge&logo=github&logoColor=white"></a>
         <a href="https://docs.google.com/spreadsheets/d/128mFFj6w1drdDzxsKsoc9Xdba2FEWSffcM2iUSrnZ0c/edit#gid=0" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Google_Sheets-34a853?style=for-the-badge&logo=googlesheets&logoColor=white"></a>
         <a href="https://m1daily.github.io/mito1daily/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/ホームページ(爆速)-459dc5?style=for-the-badge&logo=Speedtest&logoColor=white"></a>
-        <a href="https://www.mito1-h.ibk.ed.jp/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/M1_HP-459dc5?style=for-the-badge&logo=Speedtest&logoColor=white"></a>
+        <a href="https://www.mito1-h.ibk.ed.jp/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/M1_HP-be4b4b?style=for-the-badge&logo=HomeAssistantCommunityStore&logoColor=white"></a>
     </div>
 </main>
 </html>
