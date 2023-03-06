@@ -136,13 +136,13 @@ div section {
 }
 
 .top {
-	margin-left: 15.0vw;
+	width: 100%;
 }
 
 .top > img {
+	margin-left: 15.0vw;
 	margin-top: 3vw;
 	width: 100%;
-	max-width: 40em;
 }
 
 .platePair {
@@ -231,5 +231,5 @@ div section {
 .AA {
 	font-size: 1.1rem;
 	line-height: 1;
-	color: #f5f5f4;
+	color: #f0f0ff;
 }
