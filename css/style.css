@@ -135,15 +135,14 @@ div section {
 	width: 25%;
 }
 
-.top {
-	margin-left: 10.0vw;
-	width: 100%;
+.top > p {
+	font-size: 2.0vw;
+	font-weight: bold;
 }
 
 .top > img {
-	margin-top: 3vw;
-	width: 100vw;
-	max-width: 80em;
+	width: 80vw;
+	max-width: 800px;
 }
 
 .platePair {
