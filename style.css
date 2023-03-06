@@ -12,8 +12,13 @@ main {
 #month-list {
     list-style: none;
     font-size: 0.9em;
+    line-height: 1.8em;
     background-color: #fafafa;
     display: inline-block;
+}
+
+table tr:nth-child(even) {
+	background: #f0f0f0;
 }
 
 div {

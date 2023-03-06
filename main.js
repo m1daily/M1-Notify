@@ -1,5 +1,5 @@
 window.onload = function() {
-  fetch("https://script.google.com/macros/s/AKfycbwEd1JUn4d1d_rkfoId7Q-oG6Ns8OyryWIrYEEXEgG7v9QFvFI7O6FjYStfOnlabbf5gA/exec")
+  fetch("https://script.google.com/macros/s/AKfycbx20U86JWkQKGZYBbAPD3itodnAFxp-yMBb2d-g7Eig_mJFM9we6icr1OlgI7TI6TZHiw/exec")
   .then(function (response) {
     return json = response.json() // responseをjsonに変換
   }).then(function (json) {
@@ -8,15 +8,21 @@ window.onload = function() {
     // 画像の埋め込み
     document.getElementById("img").setAttribute("src", json[0].url);
     // 月間予定の埋め込み
+    // const month = json[0].month.split('\n');
+    // for (let i = 0; i < month.length; i++) {
+    //   let news = month[i];
+    //   if (news[0].match(/\d/) == null) {
+    //     news = '&nbsp;&nbsp;&nbsp;&nbsp;' + news;
+    //   }
+    //   let li = document.createElement('li');
+    //   li.innerHTML = news;
+    //   document.getElementById("month-list").appendChild(li);
     const month = json[0].month.split('\n');
     for (let i = 0; i < month.length; i++) {
-      let news = month[i];
-      if (news[0].match(/\d/) == null) {
-        news = '&nbsp;&nbsp;&nbsp;&nbsp;' + news;
-      }
-      let li = document.createElement('li');
-      li.innerHTML = news;
-      document.getElementById("month-list").appendChild(li);
+      let tr = document.createElement('tr');
+      tr.innerHTML = month[i];
+      tr.setAttribute("class", "month-list")
+      document.getElementById("month-list").appendChild(tr);
     }
   });
 }
