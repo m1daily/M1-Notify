@@ -6,7 +6,7 @@ window.onload = function() {
     // 最終更新埋め込み
     document.getElementById("date").innerText = "最終更新: " + json[0].time;  // 最終更新日時を表示
     // 画像の埋め込み
-    document.getElementById("img").setAttribute("src", json[0].url);
+    document.getElementById("img").setAttribute("src", json[0].url).setAttribute("width", "100%").setAttribute("style", "max-width: 35em;");
     // 月間予定の埋め込み
     const month = json[0].month.split('\n');
     for (let i = 0; i < month.length; i++) {
