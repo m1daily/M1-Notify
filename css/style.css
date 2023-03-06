@@ -136,13 +136,13 @@ div section {
 }
 
 .top {
+	margin-left: 10.0vw;
 	width: 100%;
 }
 
 .top > img {
-	margin-left: 15.0vw;
 	margin-top: 3vw;
-	width: 100%;
+	width: 50em;
 }
 
 .platePair {
