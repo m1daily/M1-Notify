@@ -1,0 +1,21 @@
+main {
+    font-size: 1em;
+    margin: 0px;
+    font-family: YuGothic, Yu Gothic Medium, ヒラギノ角ゴシック, Meiryo, sans-serif;
+}
+
+#img {
+    width: 100%;
+    max-width: 35em;
+}
+
+#month-list {
+    list-style: none;
+    font-size: 0.9em;
+    background-color: #fafafa;
+    display: inline-block;
+}
+
+div {
+    padding-bottom: 2em;
+}
