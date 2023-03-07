@@ -15,7 +15,7 @@ address,blockquote,img {
 	margin:0;
 	padding:0;
 	text-align: left;
-	font-size: 1.1rem;
+	font-size: 1.0rem;
 }
 
 img, fieldset {
@@ -50,7 +50,7 @@ body > nav {
 	grid-area: nav;
 	padding-top: var(--mainPad);
 	background: var(--navBg);
-	width: 18rem;
+	width: 18vw;
 }
 
 body > nav {
